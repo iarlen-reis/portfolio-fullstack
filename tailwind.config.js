@@ -8,8 +8,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: 'var(--font-body)',
         marker: 'var(--font-title)',
+        itim: 'var(--font-subtitle)',
+        poppins: 'var(--font-body)',
       },
     },
   },
