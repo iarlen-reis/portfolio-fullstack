@@ -15,7 +15,7 @@ interface IChildren {
   children: ReactNode
 }
 
-const MenuContext = createContext<IMenuContext>({
+export const MenuContext = createContext<IMenuContext>({
   isMobile: false,
   handleIsMobile: () => ({}),
 })
