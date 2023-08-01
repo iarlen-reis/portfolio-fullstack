@@ -2,6 +2,8 @@
 
 import { ReactNode } from 'react'
 import { MenuProvider } from '@/contexts/MenuContext'
+import Header from './Header'
+import Footer from './Footer'
 
 interface IChildren {
   children: ReactNode
@@ -9,9 +11,11 @@ interface IChildren {
 
 const Providers = ({ children }: IChildren) => {
   return (
-    <main>
-      <MenuProvider>{children}</MenuProvider>
-    </main>
+    <MenuProvider>
+      <Header />
+      <main className="min-h-screen px-4">{children}</main>
+      <Footer />
+    </MenuProvider>
   )
 }
 
