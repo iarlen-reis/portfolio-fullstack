@@ -3,7 +3,7 @@ const HomeIcons = () => {
   return (
     <div className="flex items-center gap-4">
       <a
-        href="https://github.com/IarlenReis"
+        href="https://github.com/iarlen-reis"
         target="_blank"
         rel="noreferrer"
         className="group flex h-9 w-9 items-center justify-center rounded border border-white/40 bg-white transition-all hover:bg-zinc-950 sm:h-11 sm:w-11 lg:h-12 lg:w-12 lg:hover:rotate-45"
@@ -15,7 +15,7 @@ const HomeIcons = () => {
         />
       </a>
       <a
-        href="https://github.com/IarlenReis"
+        href="https://www.linkedin.com/in/iarlen-reis/"
         target="_blank"
         rel="noreferrer"
         className="group flex h-9 w-9 items-center justify-center rounded border border-white/40 bg-white transition-all hover:bg-blue-900 sm:h-11 sm:w-11 lg:h-12 lg:w-12 lg:hover:rotate-45"
@@ -27,9 +27,8 @@ const HomeIcons = () => {
         />
       </a>
       <a
-        href="https://github.com/IarlenReis"
-        target="_blank"
-        rel="noreferrer"
+        href="/public/CurriculoIarlenSantosReis.pdf"
+        download="Currículo Iarlen Santos Reis"
         className="group flex h-9 w-9 items-center justify-center rounded border border-white/40 bg-white transition-all hover:bg-sky-500 sm:h-11 sm:w-11 lg:h-12 lg:w-12 lg:hover:rotate-45"
       >
         <DownloadIcon
