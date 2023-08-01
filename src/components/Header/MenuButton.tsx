@@ -10,11 +10,13 @@ const MenuButton = () => {
     <button className="bg-transparent" onClick={handleIsMobile}>
       {isMobile ? (
         <XIcon
+          data-testid="close"
           size={25}
           className="text-white transition-colors hover:text-zinc-300"
         />
       ) : (
         <MenuIcon
+          data-testid="menu"
           size={25}
           className="text-white transition-colors hover:text-zinc-300"
         />
