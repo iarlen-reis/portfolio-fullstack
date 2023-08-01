@@ -1,16 +1,16 @@
 import { GithubIcon, LinkedinIcon, DownloadIcon } from 'lucide-react'
 const HomeIcons = () => {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-4">
       <a
         href="https://github.com/IarlenReis"
         target="_blank"
         rel="noreferrer"
-        className="group flex h-10 w-10 items-center justify-center rounded border border-white/40 bg-white transition-colors hover:bg-zinc-950"
+        className="group flex h-9 w-9 items-center justify-center rounded border border-white/40 bg-white transition-all hover:bg-zinc-950 sm:h-11 sm:w-11 lg:h-12 lg:w-12 lg:hover:rotate-45"
       >
         <GithubIcon
           size={25}
-          strokeWidth={2.5}
+          strokeWidth={2.3}
           className="text-black transition-colors group-hover:text-white"
         />
       </a>
@@ -18,11 +18,11 @@ const HomeIcons = () => {
         href="https://github.com/IarlenReis"
         target="_blank"
         rel="noreferrer"
-        className="group flex h-10 w-10 items-center justify-center rounded border border-white/40 bg-white transition-colors hover:bg-blue-900"
+        className="group flex h-9 w-9 items-center justify-center rounded border border-white/40 bg-white transition-all hover:bg-blue-900 sm:h-11 sm:w-11 lg:h-12 lg:w-12 lg:hover:rotate-45"
       >
         <LinkedinIcon
           size={25}
-          strokeWidth={2.5}
+          strokeWidth={2.3}
           className="text-black transition-colors group-hover:text-white"
         />
       </a>
@@ -30,11 +30,11 @@ const HomeIcons = () => {
         href="https://github.com/IarlenReis"
         target="_blank"
         rel="noreferrer"
-        className="group flex h-10 w-10 items-center justify-center rounded border border-white/40 bg-white transition-colors hover:bg-zinc-500"
+        className="group flex h-9 w-9 items-center justify-center rounded border border-white/40 bg-white transition-all hover:bg-sky-500 sm:h-11 sm:w-11 lg:h-12 lg:w-12 lg:hover:rotate-45"
       >
         <DownloadIcon
           size={25}
-          strokeWidth={2.5}
+          strokeWidth={2.3}
           className="text-black transition-colors group-hover:text-white"
         />
       </a>
