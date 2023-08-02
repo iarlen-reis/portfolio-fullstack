@@ -15,12 +15,6 @@ const itim = Itim({
   variable: '--font-subtitle',
 })
 
-const itim = Itim({
-  subsets: ['latin'],
-  weight: ['400'],
-  variable: '--font-subtitle',
-})
-
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
@@ -41,9 +35,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${poppins.variable} ${marker.variable} ${itim.variable} min-w-screen relative min-h-screen bg-gradient-to-b from-[#011E28] from-25% to-[#050102] to-100% text-zinc-100`}
-        className={`${poppins.variable} ${marker.variable} ${itim.variable} min-w-screen relative min-h-screen bg-gradient-to-b from-[#011E28] from-25% to-[#050102] to-100% text-zinc-100`}
       >
-        <Providers>{children}</Providers>
         <Providers>{children}</Providers>
       </body>
     </html>
