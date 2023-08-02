@@ -1,6 +1,6 @@
 const AboutMeInformation = () => {
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3" data-testid="about-me-information">
       <h1 className="mt-5 font-marker text-3xl lg:text-4xl">Informações</h1>
       <div className="flex flex-col gap-3 lg:gap-4">
         <p className="font-poppins text-base leading-relaxed sm:text-lg lg:text-xl xl:text-2xl">

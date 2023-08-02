@@ -4,7 +4,7 @@ import { TbBrandNextjs, TbBrandTailwind } from 'react-icons/tb'
 
 const FrameWorkIcons = () => {
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3" data-testid="framework-icons">
       <ul className="flex items-center gap-3">
         <li>
           <a href="https://react.dev/" rel="noreferrer" target="_blank">

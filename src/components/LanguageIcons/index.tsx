@@ -8,7 +8,7 @@ import { AiOutlineHtml5 } from 'react-icons/ai'
 
 const LanguageIcons = () => {
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3" data-testid="language-icons">
       <div className="flex flex-col gap-3">
         <ul className="flex items-center gap-3">
           <li>

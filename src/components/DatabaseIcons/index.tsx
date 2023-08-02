@@ -1,7 +1,7 @@
 import { SiMongodb, SiPostgresql, SiFirebase, SiPrisma } from 'react-icons/si'
 const DatabaseIcons = () => {
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3" data-testid="database-icons">
       <ul className="flex items-center gap-3">
         <li>
           <a
