@@ -1,7 +1,7 @@
 import { GithubIcon, LinkedinIcon, DownloadIcon } from 'lucide-react'
 const HomeIcons = () => {
   return (
-    <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4" data-testid="home-icons">
       <a
         href="https://github.com/iarlen-reis"
         target="_blank"
