@@ -9,8 +9,8 @@ const renderLinkExternalWithIcon = () => {
     <LinkExternalWithIcon
       to="https://github.com/Iarlen-reis"
       icon={GithubIcon}
-      backgroundColor="bg-zinc-950"
       arialLabel="Link para o perfil do github do desenvolvedor Iarlen Reis"
+      className="flex h-9 w-9 items-center justify-center rounded border border-white/40 bg-white text-black transition-all group-hover:bg-zinc-950 group-hover:text-white"
     />,
   )
 }
