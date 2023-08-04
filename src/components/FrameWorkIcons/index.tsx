@@ -12,24 +12,28 @@ const FrameWorkIcons = () => {
           icon={FaReact}
           arialLabel="Link para a página oficial do React"
           className="hover:animate-pulse"
+          colorIcon="#61DBFB"
         />
         <LinkExternalWithIcon
           to="https://nextjs.org/"
           icon={TbBrandNextjs}
           arialLabel="Link para a página oficial do Next.js"
           className="hover:animate-pulse"
+          colorIcon="#FFFFFF"
         />
         <LinkExternalWithIcon
           to="https://tailwindcss.com/"
           icon={TbBrandTailwind}
           arialLabel="Link para a página oficial do Tailwind CSS"
           className="hover:animate-pulse"
+          colorIcon="#61DBFB"
         />
         <LinkExternalWithIcon
           to="https://fastify.dev/"
           icon={SiFastify}
           arialLabel="Link para a página oficial do Fastify"
           className="hover:animate-pulse"
+          colorIcon="#FFFFFF"
         />
       </ul>
     </div>
