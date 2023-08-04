@@ -10,12 +10,16 @@ interface ILinkNavigationProps {
 
 const LinkNavigation = ({ to, icon: Icon, name }: ILinkNavigationProps) => {
   const pathname = usePathname()
+
   return (
-    <Link href={to} className="flex items-center justify-center gap-2">
+    <Link
+      href={to}
+      className="flex items-center justify-center gap-2 hover:animate-pulse"
+    >
       <span
         className={
           pathname === to
-            ? 'font-poppins text-yellow-400'
+            ? 'font-poppins text-cyan-400'
             : 'font-poppins text-white'
         }
       >
@@ -23,7 +27,7 @@ const LinkNavigation = ({ to, icon: Icon, name }: ILinkNavigationProps) => {
       </span>
       <Icon
         size={20}
-        className={pathname === to ? 'text-yellow-400' : 'text-white'}
+        className={pathname === to ? 'text-cyan-400' : 'text-white'}
       />
     </Link>
   )

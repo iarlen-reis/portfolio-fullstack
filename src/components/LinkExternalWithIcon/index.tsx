@@ -16,7 +16,6 @@ const LinkExternalWithIcon = ({
   icon: Icon,
   download,
   arialLabel,
-  fontSize,
   colorIcon,
   className,
 }: ILinkExternalWithIconProps) => {
@@ -30,7 +29,7 @@ const LinkExternalWithIcon = ({
         download={download}
         className={className}
       >
-        <Icon strokeWidth={2.3} color={colorIcon} fontSize={fontSize} />
+        <Icon color={colorIcon} fontSize={45} />
       </a>
     </li>
   )
