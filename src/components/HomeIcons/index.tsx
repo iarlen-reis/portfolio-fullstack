@@ -1,43 +1,28 @@
 import { GithubIcon, LinkedinIcon, DownloadIcon } from 'lucide-react'
+import LinkExternalWithIcon from '../LinkExternalWithIcon'
 const HomeIcons = () => {
   return (
-    <div className="flex items-center gap-4" data-testid="home-icons">
-      <a
-        href="https://github.com/iarlen-reis"
-        target="_blank"
-        rel="noreferrer"
-        className="group flex h-9 w-9 items-center justify-center rounded border border-white/40 bg-white transition-all hover:bg-zinc-950 sm:h-11 sm:w-11 lg:h-12 lg:w-12 lg:hover:rotate-45"
-      >
-        <GithubIcon
-          size={25}
-          strokeWidth={2.3}
-          className="text-black transition-colors group-hover:text-white"
-        />
-      </a>
-      <a
-        href="https://www.linkedin.com/in/iarlen-reis/"
-        target="_blank"
-        rel="noreferrer"
-        className="group flex h-9 w-9 items-center justify-center rounded border border-white/40 bg-white transition-all hover:bg-blue-900 sm:h-11 sm:w-11 lg:h-12 lg:w-12 lg:hover:rotate-45"
-      >
-        <LinkedinIcon
-          size={25}
-          strokeWidth={2.3}
-          className="text-black transition-colors group-hover:text-white"
-        />
-      </a>
-      <a
-        href="/public/CurriculoIarlenSantosReis.pdf"
-        download="Currículo Iarlen Santos Reis"
-        className="group flex h-9 w-9 items-center justify-center rounded border border-white/40 bg-white transition-all hover:bg-sky-500 sm:h-11 sm:w-11 lg:h-12 lg:w-12 lg:hover:rotate-45"
-      >
-        <DownloadIcon
-          size={25}
-          strokeWidth={2.3}
-          className="text-black transition-colors group-hover:text-white"
-        />
-      </a>
-    </div>
+    <ul className="flex items-center gap-4" data-testid="home-icons">
+      <LinkExternalWithIcon
+        to="https://github.com/Iarlen-reis"
+        icon={GithubIcon}
+        backgroundColor="bg-zinc-950"
+        arialLabel="Link para o perfil do github do desenvolvedor Iarlen Reis"
+      />
+      <LinkExternalWithIcon
+        to="https://linkedin.com/in/Iarlen-Reis"
+        icon={LinkedinIcon}
+        backgroundColor="bg-blue-900"
+        arialLabel="Link para o perfil do Linkedin do desenvolvedor Iarlen Reis"
+      />
+      <LinkExternalWithIcon
+        to="/public/CurriculoIarlenSantosReis.pdf"
+        icon={DownloadIcon}
+        backgroundColor="bg-zinc-950"
+        download="Currículo Iarlen Santos Reis"
+        arialLabel="Link para baixar o currículo desenvolvedor Iarlen Reis"
+      />
+    </ul>
   )
 }
 
