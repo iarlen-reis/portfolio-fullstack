@@ -5,49 +5,53 @@ import {
 } from 'react-icons/tb'
 import { FaNodeJs } from 'react-icons/fa'
 import { AiOutlineHtml5 } from 'react-icons/ai'
+import LinkExternalWithIcon from '@/components/LinkExternalWithIcon'
 
 const LanguageIcons = () => {
   return (
     <div className="flex flex-col gap-3" data-testid="language-icons">
       <div className="flex flex-col gap-3">
         <ul className="flex items-center gap-3">
-          <li>
-            <a
-              href="https://www.typescriptlang.org/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <TbBrandTypescript fontSize={45} color={'#265c7e'} />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.javascript.com/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <TbBrandJavascript fontSize={45} color={'#f7df1e'} />
-            </a>
-          </li>
-          <li>
-            <a href="https://nodejs.org/en" rel="noreferrer" target="_blank">
-              <FaNodeJs fontSize={45} color={'#27ba36'} />
-            </a>
-          </li>
-          <li>
-            <a href="https://html.com/" rel="noreferrer" target="_blank">
-              <AiOutlineHtml5 fontSize={45} color={'#e36b20'} />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.w3.org/Style/CSS/Overview.en.html"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <TbBrandCss3 fontSize={45} color={'#216ee3'} />
-            </a>
-          </li>
+          <LinkExternalWithIcon
+            to="https://www.typescriptlang.org/"
+            icon={TbBrandTypescript}
+            arialLabel="Link para a página oficial do TypeScript"
+            fontSize={45}
+            colorIcon={'#265c7e'}
+            className="hover:animate-pulse"
+          />
+          <LinkExternalWithIcon
+            to="https://www.javascript.com/"
+            icon={TbBrandJavascript}
+            arialLabel="Link para a página oficial do JavaScript"
+            fontSize={45}
+            colorIcon={'#f7df1e'}
+            className="hover:animate-pulse"
+          />
+          <LinkExternalWithIcon
+            to="https://nodejs.org/en"
+            icon={FaNodeJs}
+            arialLabel="Link para a página oficial do Node.js"
+            fontSize={45}
+            colorIcon={'#27ba36'}
+            className="hover:animate-pulse"
+          />
+          <LinkExternalWithIcon
+            to="https://html.com/"
+            icon={AiOutlineHtml5}
+            arialLabel="Link para a página oficial do HTML"
+            fontSize={45}
+            colorIcon={'#e36b20'}
+            className="hover:animate-pulse"
+          />
+          <LinkExternalWithIcon
+            to="https://www.w3.org/Style/CSS/Overview.en.html"
+            icon={TbBrandCss3}
+            arialLabel="Link para a página oficial do CSS"
+            fontSize={45}
+            colorIcon={'#216ee3'}
+            className="hover:animate-pulse"
+          />
         </ul>
       </div>
     </div>
