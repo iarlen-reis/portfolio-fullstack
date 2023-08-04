@@ -7,7 +7,7 @@ const MenuButton = () => {
   const { handleIsMobile, isMobile } = useMenuContext()
 
   return (
-    <button className="bg-transparent" onClick={handleIsMobile}>
+    <button className="bg-transparent md:hidden" onClick={handleIsMobile}>
       {isMobile ? (
         <XIcon
           data-testid="close"

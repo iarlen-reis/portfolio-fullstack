@@ -13,7 +13,9 @@ const Providers = ({ children }: IChildren) => {
   return (
     <MenuProvider>
       <Header />
-      <main className="min-h-screen px-4">{children}</main>
+      <main className="m-auto min-h-screen w-full max-w-[1280px] px-4">
+        {children}
+      </main>
       <Footer />
     </MenuProvider>
   )

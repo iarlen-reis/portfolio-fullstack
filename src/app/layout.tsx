@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${marker.variable} ${itim.variable} min-w-screen relative min-h-screen bg-gradient-to-b from-[#011E28] from-25% to-[#050102] to-100% text-zinc-100`}
+        className={`${poppins.variable} ${marker.variable} ${itim.variable} min-w-screen min-h-screen bg-gradient-to-b from-[#011E28] from-25% to-[#050102] to-100% text-zinc-100`}
       >
         <Providers>{children}</Providers>
       </body>
