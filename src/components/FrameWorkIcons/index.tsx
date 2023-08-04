@@ -1,31 +1,36 @@
 import { FaReact } from 'react-icons/fa'
 import { SiFastify } from 'react-icons/si'
 import { TbBrandNextjs, TbBrandTailwind } from 'react-icons/tb'
+import LinkExternalWithIcon from '../LinkExternalWithIcon'
 
 const FrameWorkIcons = () => {
   return (
     <div className="flex flex-col gap-3" data-testid="framework-icons">
       <ul className="flex items-center gap-3">
-        <li>
-          <a href="https://react.dev/" rel="noreferrer" target="_blank">
-            <FaReact fontSize={45} color={'#61DBFB'} />
-          </a>
-        </li>
-        <li>
-          <a href="https://nextjs.org/" rel="noreferrer" target="_blank">
-            <TbBrandNextjs fontSize={45} color={'#FFF'} />
-          </a>
-        </li>
-        <li>
-          <a href="https://tailwindcss.com/" rel="noreferrer" target="_blank">
-            <TbBrandTailwind fontSize={45} color={'#61DBFB'} />
-          </a>
-        </li>
-        <li>
-          <a href="https://fastify.dev/" rel="noreferrer" target="_blank">
-            <SiFastify fontSize={45} color={'#FFF'} />
-          </a>
-        </li>
+        <LinkExternalWithIcon
+          to="https://react.dev/"
+          icon={FaReact}
+          arialLabel="Link para a página oficial do React"
+          className="hover:animate-pulse"
+        />
+        <LinkExternalWithIcon
+          to="https://nextjs.org/"
+          icon={TbBrandNextjs}
+          arialLabel="Link para a página oficial do Next.js"
+          className="hover:animate-pulse"
+        />
+        <LinkExternalWithIcon
+          to="https://tailwindcss.com/"
+          icon={TbBrandTailwind}
+          arialLabel="Link para a página oficial do Tailwind CSS"
+          className="hover:animate-pulse"
+        />
+        <LinkExternalWithIcon
+          to="https://fastify.dev/"
+          icon={SiFastify}
+          arialLabel="Link para a página oficial do Fastify"
+          className="hover:animate-pulse"
+        />
       </ul>
     </div>
   )
