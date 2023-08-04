@@ -6,21 +6,21 @@ const HomeIcons = () => {
       <LinkExternalWithIcon
         to="https://github.com/Iarlen-reis"
         icon={GithubIcon}
-        backgroundColor="bg-zinc-950"
         arialLabel="Link para o perfil do github do desenvolvedor Iarlen Reis"
+        className="flex h-9 w-9 items-center justify-center rounded border border-white/40 bg-white text-black transition-all group-hover:bg-zinc-950 group-hover:text-white sm:h-11 sm:w-11 lg:h-12 lg:w-12 lg:group-hover:translate-y-2"
       />
       <LinkExternalWithIcon
         to="https://linkedin.com/in/Iarlen-Reis"
         icon={LinkedinIcon}
-        backgroundColor="bg-blue-900"
         arialLabel="Link para o perfil do Linkedin do desenvolvedor Iarlen Reis"
+        className="flex h-9 w-9 items-center justify-center rounded border border-white/40 bg-white text-black transition-all group-hover:bg-blue-800 group-hover:text-white sm:h-11 sm:w-11 lg:h-12 lg:w-12 lg:group-hover:translate-y-2"
       />
       <LinkExternalWithIcon
         to="/public/CurriculoIarlenSantosReis.pdf"
         icon={DownloadIcon}
-        backgroundColor="bg-zinc-950"
         download="Currículo Iarlen Santos Reis"
         arialLabel="Link para baixar o currículo desenvolvedor Iarlen Reis"
+        className="flex h-9 w-9 items-center justify-center rounded border border-white/40 bg-white text-black transition-all group-hover:bg-green-500 group-hover:text-white sm:h-11 sm:w-11 lg:h-12 lg:w-12 lg:group-hover:translate-y-2"
       />
     </ul>
   )

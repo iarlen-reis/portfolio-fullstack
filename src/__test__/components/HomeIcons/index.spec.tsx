@@ -62,14 +62,14 @@ describe('HomeIcons component', () => {
     )
   })
 
-  it('should have backgroundColor with value "bg-blue-900" on group-hover.', () => {
+  it('should have backgroundColor with value "bg-blue-800" on group-hover.', () => {
     const { getAllByRole } = renderHomeIcons()
 
     const linkedinIcon = getAllByRole('link')[1]
 
     const backgroundColor = linkedinIcon.getAttribute('class')?.split(' ')
 
-    expect(backgroundColor).toContain('group-hover:bg-blue-900')
+    expect(backgroundColor).toContain('group-hover:bg-blue-800')
   })
 
   it('should have link to download with href "/public/CurriculoIarlenSantosReis.pdf" on download link', () => {
@@ -83,12 +83,12 @@ describe('HomeIcons component', () => {
     )
   })
 
-  it('should have backgroundColor with value "bg-zinc-950" on group-hover download link.', () => {
+  it('should have backgroundColor with value "bg-green-500" on group-hover download link.', () => {
     const { getAllByRole } = renderHomeIcons()
 
     const downloadIcon = getAllByRole('link')[2]
     const backgroundColor = downloadIcon.getAttribute('class')?.split(' ')
 
-    expect(backgroundColor).toContain('group-hover:bg-zinc-950')
+    expect(backgroundColor).toContain('group-hover:bg-green-500')
   })
 })
