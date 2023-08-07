@@ -5,7 +5,7 @@ import z from 'zod'
 export async function GET() {
   const projects = await prisma.project.findMany()
 
-  return NextResponse.json({ projects })
+  return NextResponse.json(projects)
 }
 
 export async function POST(request: NextRequest) {
@@ -17,6 +17,8 @@ export async function POST(request: NextRequest) {
     deployLink: z.string(),
     githubLink: z.string(),
     projectDate: z.string(),
+    technology: z.string(),
+    type: z.string(),
   })
 
   const {
@@ -27,6 +29,8 @@ export async function POST(request: NextRequest) {
     deployLink,
     githubLink,
     projectDate,
+    technology,
+    type,
   } = bodySchema.parse(await request.json())
 
   const project = await prisma.project.create({
@@ -38,6 +42,8 @@ export async function POST(request: NextRequest) {
       deployLink,
       githubLink,
       projectDate,
+      technology,
+      type,
     },
   })
 
