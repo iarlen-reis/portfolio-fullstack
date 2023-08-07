@@ -16,4 +16,6 @@ model Project {
   githubLink  String
   deployLink  String
   projectDate String
+  type        String
+  technology  String
 }
