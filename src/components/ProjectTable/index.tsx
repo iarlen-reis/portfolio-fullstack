@@ -1,35 +1,48 @@
 import Link from 'next/link'
 
-interface IProjectTableProps {
+interface IProjectProps {
   id: string
   title: string
-  createdAt: string
+  type: string
 }
 
-const ProjectTable = ({ id, title, createdAt }: IProjectTableProps) => {
+interface IProjectTableProps {
+  projects: IProjectProps[]
+}
+
+const ProjectTable = ({ projects }: IProjectTableProps) => {
   return (
     <div>
       <table className="w-full text-left">
         <thead>
           <tr>
             <th className="px-1">Projeto</th>
-            <th>Criado em</th>
+            <th>Tipo do projeto</th>
             <th>Ações</th>
           </tr>
         </thead>
         <tbody className="max-h-9 overflow-auto">
-          <tr className="odd:bg-[#011E28]">
-            <td className="mb-2 px-1">{title}</td>
-            <td>{createdAt}</td>
-            <td>
-              <Link
-                href={`/projetos/editar/${id}`}
-                className="font-semibold transition-colors hover:text-zinc-500"
-              >
-                Editar
-              </Link>
-            </td>
-          </tr>
+          {projects.map((project) => (
+            <tr className="odd:bg-[#011E28]" key={project.id}>
+              <td className="mb-2 px-1">
+                <Link
+                  href={`/projetos/${project.id}`}
+                  className="font-semibold transition-colors hover:text-zinc-500"
+                >
+                  {project.title}
+                </Link>
+              </td>
+              <td>{project.type}</td>
+              <td>
+                <Link
+                  href={`/projetos/editar/${project.id}`}
+                  className="font-semibold transition-colors hover:text-zinc-500"
+                >
+                  Editar
+                </Link>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>

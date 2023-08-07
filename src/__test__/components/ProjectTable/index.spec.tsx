@@ -4,9 +4,14 @@ import '@testing-library/jest-dom'
 import ProjectTable from '@/components/ProjectTable'
 
 const renderProjectTable = () => {
-  return render(
-    <ProjectTable id="1" title="Projeto 1" createdAt="10 de jul, 2023" />,
-  )
+  const projects = [
+    {
+      id: '1',
+      title: 'Projeto 1',
+      type: 'Aplicação Web',
+    },
+  ]
+  return render(<ProjectTable projects={projects} />)
 }
 
 describe('ProjectTable component', () => {
@@ -14,11 +19,11 @@ describe('ProjectTable component', () => {
     renderProjectTable()
   })
 
-  it('should display the th with values "Projeto", "Criado em" and "Ações"', () => {
+  it('should display the th with values "Projeto", "Tipo do projeto" and "Ações"', () => {
     const { getByText } = renderProjectTable()
 
     const thProject = getByText('Projeto')
-    const thcreated = getByText('Criado em')
+    const thcreated = getByText('Tipo do projeto')
     const thActions = getByText('Ações')
 
     expect(thProject).toBeInTheDocument()
@@ -30,12 +35,20 @@ describe('ProjectTable component', () => {
     const { getByText } = renderProjectTable()
 
     const trProject = getByText('Projeto 1')
-    const trcreated = getByText('10 de jul, 2023')
+    const trcreated = getByText('Aplicação Web')
     const trActions = getByText('Editar')
 
     expect(trProject).toBeInTheDocument()
     expect(trcreated).toBeInTheDocument()
     expect(trActions).toBeInTheDocument()
+  })
+
+  it('should have a link to show the project with value /projetos/1', () => {
+    const { getByRole } = renderProjectTable()
+
+    const link = getByRole('link', { name: 'Projeto 1' })
+
+    expect(link).toHaveAttribute('href', '/projetos/1')
   })
 
   it('should have a link to edit the project with value /projetos/editar/1', () => {
