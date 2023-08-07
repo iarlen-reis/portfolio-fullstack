@@ -7,6 +7,14 @@ header {
   position: relative;
 }
 
+th, td {
+  padding: 10px;
+}
+
+th {
+  font-size: 1.1rem;
+}
+
 header::after {
   position: absolute;
   content: "";
@@ -48,3 +56,8 @@ header::after {
 }
 
 
+@media (min-width: 640px) {
+  th {
+    font-size: 1.3rem;
+  }
+}

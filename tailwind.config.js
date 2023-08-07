@@ -11,6 +11,7 @@ module.exports = {
         marker: 'var(--font-title)',
         itim: 'var(--font-subtitle)',
         poppins: 'var(--font-body)',
+        roboto: 'var(--font-roboto)',
       },
     },
   },
