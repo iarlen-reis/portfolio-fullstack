@@ -2,11 +2,7 @@ import axios from 'axios'
 import Image from 'next/image'
 import { GithubIcon, RocketIcon } from 'lucide-react'
 import PageNavigation from '@/components/PageNavigation'
-interface IParamProps {
-  params: {
-    id: string
-  }
-}
+import LinkExternalWithIcon from '@/components/LinkExternalWithIcon'
 
 interface IProjectProps {
   id: string
@@ -20,10 +16,9 @@ interface IProjectProps {
   type: string
   technology: string
 }
-
-const Project = async ({ params: { id } }: IParamProps) => {
+const Project = async ({ params }: { params: { id: string } }) => {
   const response = await axios.get<IProjectProps>(
-    `http://localhost:3000/api/projects/${id}`,
+    `http://localhost:3000/api/projects/${params.id}`,
   )
 
   const project = await response.data
@@ -48,28 +43,18 @@ const Project = async ({ params: { id } }: IParamProps) => {
           />
         </div>
         <ul className="flex items-center gap-3">
-          <li>
-            <a
-              href={project.githubLink}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Link para github do projeto ${project.title}`}
-              className="flex items-center justify-center rounded-lg border border-white/10 bg-transparent px-4 py-3 hover:bg-black"
-            >
-              <GithubIcon size={25} />
-            </a>
-          </li>
-          <li>
-            <a
-              href={project.deployLink}
-              target="_blank"
-              rel="noreferrer"
-              aria-label={`Link para deploy do projeto ${project.title}`}
-              className="flex items-center justify-center rounded-lg border border-white/10 bg-transparent px-4 py-3 hover:bg-emerald-600"
-            >
-              <RocketIcon size={25} />
-            </a>
-          </li>
+          <LinkExternalWithIcon
+            icon={GithubIcon}
+            to={project.githubLink}
+            arialLabel={`Link para github do projeto ${project.title}`}
+            className="flex items-center justify-center rounded-lg border border-white/10 bg-transparent px-4 py-3 hover:bg-black"
+          />
+          <LinkExternalWithIcon
+            icon={RocketIcon}
+            to={project.deployLink}
+            arialLabel={`Link para deploy do projeto ${project.title}`}
+            className="flex items-center justify-center rounded-lg border border-white/10 bg-transparent px-4 py-3 hover:bg-emerald-600"
+          />
         </ul>
         <div className="flex flex-col gap-2">
           <h2 className="font-marker text-xl sm:text-2xl">Tecnologias</h2>
