@@ -26,7 +26,7 @@ const PageNavigation = ({ from, to, link }: IPageNavigationProps) => {
   return (
     <>
       <nav>
-        <ul className="flex items-center gap-1">
+        <ul className="flex items-center gap-2">
           <li>
             <Link
               href={link}
