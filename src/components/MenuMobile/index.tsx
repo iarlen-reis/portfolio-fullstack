@@ -10,30 +10,41 @@ import {
 import LinkNavigation from '../LinkNavigation'
 import LinkExternalWithIcon from '../LinkExternalWithIcon'
 import { useMenuContext } from '@/contexts/MenuContext'
+import Link from 'next/link'
 import Image from 'next/image'
+import MenuButton from '../Header/MenuButton'
+
 import Logo from '/public/logo-1.png'
 const MenuMobile = () => {
-  const { isMobile } = useMenuContext()
+  const { isMobile, handleIsMobile } = useMenuContext()
   return (
     <>
       {isMobile && (
-        <div className="absolute right-0 top-[67px] flex h-screen w-[300px] flex-col divide-y divide-white/20 bg-black px-5 md:hidden">
-          <div className="py-4">
-            <Image src={Logo} alt="logo" width={120} height={70} />
+        <div className="menu__mobile absolute right-0 top-0 z-10 flex h-screen w-[260px] flex-col bg-black px-4 transition-all md:hidden">
+          <div className="mt-3 flex items-center justify-between border-b border-white/40 pb-2">
+            <Link href="/">
+              <Image
+                src={Logo}
+                alt="logo de um gato branco com o nome Iarlen Reis escrito do lado"
+                width={130}
+                height={70}
+              />
+            </Link>
+            <MenuButton />
           </div>
-          <nav className="flex items-center justify-start py-4">
-            <ul className="flex flex-col items-start justify-start gap-4">
-              <li>
+          <nav className="mt-6 flex items-center justify-start border-b border-white/40 pb-5">
+            <ul className="flex flex-col items-start justify-center gap-4">
+              <li onClick={handleIsMobile}>
                 <LinkNavigation name="Página inicial" to="/" icon={HomeIcon} />
               </li>
-              <li>
+              <li onClick={handleIsMobile}>
                 <LinkNavigation
                   name="Sobre mim"
                   to="/sobre"
                   icon={PenSquareIcon}
                 />
               </li>
-              <li>
+              <li onClick={handleIsMobile}>
                 <LinkNavigation
                   name="Projetos"
                   to="/projetos"
@@ -42,7 +53,7 @@ const MenuMobile = () => {
               </li>
             </ul>
           </nav>
-          <ul className="flex items-center gap-4 py-4">
+          <ul className="mt-5 flex items-center gap-4">
             <LinkExternalWithIcon
               to="https://github.com/Iarlen-reis"
               icon={GithubIcon}
