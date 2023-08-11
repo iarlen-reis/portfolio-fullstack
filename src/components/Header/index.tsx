@@ -4,12 +4,15 @@ import MenuButton from './MenuButton'
 import MenuMobile from '../MenuMobile'
 import Logo from '/public/logo-1.png'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Header = () => {
   return (
     <header className="relative flex w-full items-center">
       <div className="m-auto flex w-full max-w-[1280px] items-center justify-between px-4 py-3">
-        <Image src={Logo} alt="logo" width={130} height={70} />
+        <Link href="/">
+          <Image src={Logo} alt="logo" width={130} height={70} />
+        </Link>
         <nav className="hidden md:flex">
           <ul className="flex flex-row items-center gap-6">
             <li>

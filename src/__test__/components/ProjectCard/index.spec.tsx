@@ -12,6 +12,7 @@ const renderProjectCard = () => {
       projectDate="10 de jul, 2023 - 11 de jul, 2023"
       deployLink="https://www.paquetacalcados.com.br"
       detailsLink="projetos/1"
+      type="Aplicação Web"
     />,
   )
 }
@@ -53,22 +54,22 @@ describe('ProjectCard component', () => {
     expect(projectDate).toBeInTheDocument()
   })
 
+  it('should have details link with value <projetos/1>', () => {
+    const { getAllByRole } = renderProjectCard()
+
+    const detailsLink = getAllByRole('link')[0]
+
+    expect(detailsLink).toHaveAttribute('href', 'projetos/1')
+  })
+
   it('should have deploy link with value <https://www.paquetacalcados.com.br>', () => {
     const { getAllByRole } = renderProjectCard()
 
-    const deployLink = getAllByRole('link')[0]
+    const deployLink = getAllByRole('link')[1]
 
     expect(deployLink).toHaveAttribute(
       'href',
       'https://www.paquetacalcados.com.br',
     )
-  })
-
-  it('should have details link with value <projetos/1>', () => {
-    const { getAllByRole } = renderProjectCard()
-
-    const detailsLink = getAllByRole('link')[1]
-
-    expect(detailsLink).toHaveAttribute('href', 'projetos/1')
   })
 })
