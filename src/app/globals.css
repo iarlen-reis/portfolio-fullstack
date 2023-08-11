@@ -61,3 +61,17 @@ header::after {
     font-size: 1.3rem;
   }
 }
+
+
+.menu__mobile {
+  animation: MenuAnimation 1s ease-in-out forwards;
+}
+
+@keyframes MenuAnimation {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}

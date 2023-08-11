@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { LucideIcon } from 'lucide-react'
+import { usePathname } from 'next/navigation'
 
 interface ILinkNavigationProps {
   to: string
@@ -11,24 +11,19 @@ interface ILinkNavigationProps {
 const LinkNavigation = ({ to, icon: Icon, name }: ILinkNavigationProps) => {
   const pathname = usePathname()
 
+  const isActive = pathname === to
   return (
     <Link
       href={to}
-      className="flex items-center justify-center gap-2 hover:animate-pulse"
+      className={`flex items-center justify-center gap-3 hover:animate-pulse ${
+        isActive ? 'animate-pulse font-semibold text-white' : 'text-zinc-300'
+      }`}
     >
-      <span
-        className={
-          pathname === to
-            ? 'font-poppins text-cyan-400'
-            : 'font-poppins text-white'
-        }
-      >
-        {name}
+      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white transition-all md:hidden">
+        <Icon size={18} className="text-zinc-950" />
       </span>
-      <Icon
-        size={20}
-        className={pathname === to ? 'text-cyan-400' : 'text-white'}
-      />
+
+      <span>{name}</span>
     </Link>
   )
 }
