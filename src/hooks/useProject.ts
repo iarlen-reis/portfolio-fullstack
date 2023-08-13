@@ -1,7 +1,9 @@
 import axios from 'axios'
 import { useMutation } from 'react-query'
+import { useRouter } from 'next/navigation'
 
 interface IProjectProps {
+  id: string
   title: string
   description: string
   image: string
@@ -14,11 +16,18 @@ interface IProjectProps {
 }
 
 interface IUseProjectProps {
+  getProject: (id: string) => void
   createProject: (project: IProjectProps) => void
+  editProject: (project: IProjectProps) => void
+  deleteProject: (id: string) => void
+  project: IProjectProps | undefined
+  isEdditing: boolean
   isCreating: boolean
 }
 
 export const useProject = (): IUseProjectProps => {
+  const router = useRouter()
+
   const { mutate: createProject, isLoading: isCreating } = useMutation(
     async (project: IProjectProps) => {
       await axios.post<IProjectProps>(
@@ -26,6 +35,47 @@ export const useProject = (): IUseProjectProps => {
         project,
       )
     },
+    {
+      onSuccess() {
+        router.push('/dashboard')
+      },
+    },
   )
-  return { createProject, isCreating }
+
+  const { data: project, mutate: getProject } = useMutation(
+    async (id: string) => {
+      const response = await axios.get<IProjectProps>(
+        `http://localhost:3000/api/projects/${id}`,
+      )
+
+      return response.data
+    },
+  )
+
+  const { mutate: editProject, isLoading: isEdditing } = useMutation(
+    async (project: IProjectProps) => {
+      await axios.put<IProjectProps>(
+        `http://localhost:3000/api/projects/${project.id}`,
+        project,
+      )
+    },
+    {
+      onSuccess() {
+        router.push('/dashboard')
+      },
+    },
+  )
+
+  const { mutate: deleteProject } = useMutation(async (id: string) => {
+    await axios.delete(`http://localhost:3000/api/projects/${id}`)
+  })
+  return {
+    getProject,
+    createProject,
+    editProject,
+    deleteProject,
+    project,
+    isCreating,
+    isEdditing,
+  }
 }
