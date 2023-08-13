@@ -2,6 +2,10 @@ import { fireEvent, render } from '@testing-library/react'
 import Criar from '@/app/criar/page'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(),
+}))
+
 const renderCriar = () => {
   const queryClient = new QueryClient()
 
