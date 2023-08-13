@@ -1,26 +1,6 @@
+import { IPageNavigationProps } from '@/@types/PageNavigationTypes'
 import Link from 'next/link'
 import React from 'react'
-
-interface IPageNavigationProps {
-  from: string
-  to: string
-  link: string
-}
-
-/*
- <div>
-        <p className="font-roboto text-sm transition-colors lg:text-base">
-          <Link
-            href={link}
-            aria-label="Voltar para a lista de projetos"
-            className="hover:font-semibold hover:text-zinc-400"
-          >
-            {to}
-          </Link>{' '}
-          &gt; <span className="font-semibold capitalize">{from}</span>
-        </p>
-      </div>
-*/
 
 const PageNavigation = ({ from, to, link }: IPageNavigationProps) => {
   return (

@@ -1,12 +1,6 @@
 import Link from 'next/link'
-import { LucideIcon } from 'lucide-react'
 import { usePathname } from 'next/navigation'
-
-interface ILinkNavigationProps {
-  to: string
-  icon: LucideIcon
-  name: string
-}
+import { ILinkNavigationProps } from '@/@types/LinkNavigationTypes'
 
 const LinkNavigation = ({ to, icon: Icon, name }: ILinkNavigationProps) => {
   const pathname = usePathname()

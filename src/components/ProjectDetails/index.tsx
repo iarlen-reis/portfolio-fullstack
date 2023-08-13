@@ -3,26 +3,10 @@ import React from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import TextField from '../InputField'
 import { TextAreaField } from '../TextAreaField'
-
-interface IProjectFormProps {
-  id: string
-  title: string
-  description: string
-  image: string
-  alt: string
-  type: string
-  deployLink: string
-  githubLink: string
-  projectDate: string
-  technology: string
-}
-
-interface IProjectDetailsProps {
-  isCreating?: boolean
-  isEditing?: boolean
-  project?: IProjectFormProps
-  handleFormSubmit: (data: IProjectFormProps) => void
-}
+import {
+  IProjectDetailsProps,
+  IProjectFormProps,
+} from '@/@types/ProjectDetailsTypes'
 
 const ProjectDetails = ({
   isCreating,

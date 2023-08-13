@@ -1,18 +1,12 @@
 'use client'
-import { TextareaHTMLAttributes } from 'react'
+import { TextAreaFieldProps } from '@/@types/TextAreaFieldTypes'
 import { useController, useFormContext } from 'react-hook-form'
-
-interface TextAreaFieldProps
-  extends TextareaHTMLAttributes<HTMLTextAreaElement> {
-  name: string
-  label: string
-  rules?: object
-}
 
 export const TextAreaField = ({
   label,
   name,
   rules,
+  defaultValue,
   ...rest
 }: TextAreaFieldProps) => {
   const { control } = useFormContext()
@@ -24,7 +18,7 @@ export const TextAreaField = ({
     name,
     control,
     rules,
-    defaultValue: '',
+    defaultValue: defaultValue || '',
   })
 
   return (

@@ -1,14 +1,6 @@
 'use client'
-import { InputHTMLAttributes } from 'react'
+import { ITextFieldProps } from '@/@types/TextFieldTypes'
 import { useController, useFormContext } from 'react-hook-form'
-
-interface ITextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
-  name: string
-  label: string
-  rules?: object
-  type: string
-  defaultValue?: string
-}
 
 const TextField = ({
   name,

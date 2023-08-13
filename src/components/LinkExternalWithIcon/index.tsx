@@ -1,16 +1,5 @@
-import { LucideIcon } from 'lucide-react'
-import { IconType } from 'react-icons'
+import { ILinkExternalWithIconProps } from '@/@types/LinkExternalWithIconTypes'
 
-interface ILinkExternalWithIconProps {
-  to: string
-  icon: LucideIcon | IconType
-  className?: string
-  backgroundColor?: string
-  download?: string
-  arialLabel?: string
-  fontSize?: number
-  colorIcon?: string
-}
 const LinkExternalWithIcon = ({
   to,
   icon: Icon,

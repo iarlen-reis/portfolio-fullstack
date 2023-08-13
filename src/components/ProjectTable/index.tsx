@@ -1,14 +1,5 @@
+import { IProjectTableProps } from '@/@types/ProjectTableTypes'
 import Link from 'next/link'
-
-interface IProjectProps {
-  id: string
-  title: string
-  type: string
-}
-
-interface IProjectTableProps {
-  projects: IProjectProps[]
-}
 
 const ProjectTable = ({ projects }: IProjectTableProps) => {
   return (

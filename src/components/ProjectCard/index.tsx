@@ -8,16 +8,8 @@ import {
 } from 'lucide-react'
 
 import Link from 'next/link'
+import { IProjectCardImageProps } from '@/@types/ProjectCardTypes'
 
-interface IProjectCardImageProps {
-  image: string
-  alt: string
-  title: string
-  projectDate: string
-  deployLink: string
-  detailsLink: string
-  type: string
-}
 const ProjectCard = ({
   image,
   alt,
