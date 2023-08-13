@@ -3,19 +3,8 @@ import Image from 'next/image'
 import { GithubIcon, RocketIcon } from 'lucide-react'
 import PageNavigation from '@/components/PageNavigation'
 import LinkExternalWithIcon from '@/components/LinkExternalWithIcon'
+import { IProjectProps } from '@/@types/ProjectTypes'
 
-interface IProjectProps {
-  id: string
-  title: string
-  description: string
-  image: string
-  alt: string
-  deployLink: string
-  githubLink: string
-  projectDate: string
-  type: string
-  technology: string
-}
 const Project = async ({ params }: { params: { id: string } }) => {
   const response = await axios.get<IProjectProps>(
     `http://localhost:3000/api/projects/${params.id}`,

@@ -1,17 +1,6 @@
+import { IProjectProps } from '@/@types/ProjectTypes'
 import ProjectCard from '@/components/ProjectCard'
 import axios from 'axios'
-
-interface IProjectProps {
-  id: string
-  title: string
-  description: string
-  image: string
-  alt: string
-  type: string
-  deployLink: string
-  githubLink: string
-  projectDate: string
-}
 
 const Projetos = async () => {
   const response = await axios.get<IProjectProps[]>(

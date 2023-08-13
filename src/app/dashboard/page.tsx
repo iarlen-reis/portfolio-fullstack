@@ -1,12 +1,7 @@
+import { IProjectProps } from '@/@types/ProjectTypes'
 import ProjectTable from '@/components/ProjectTable'
 import axios from 'axios'
 import Link from 'next/link'
-
-interface IProjectProps {
-  id: string
-  title: string
-  type: string
-}
 
 const Dashboard = async () => {
   const response = await axios.get<IProjectProps[]>(
