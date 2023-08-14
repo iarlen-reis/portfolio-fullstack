@@ -1,11 +1,15 @@
+'use client'
 import Image from 'next/image'
 import PerfilImage from 'public/perfil.png'
+import { Slide } from 'react-awesome-reveal'
 
 const ProfileImage = () => {
   return (
-    <div
+    <Slide
+      direction="left"
+      duration={2000}
       data-testid="profile-image"
-      className="profile m-auto mt-10 h-[170px] w-[170px] overflow-hidden rounded-full sm:h-[220px] sm:w-[220px] lg:h-[290px] lg:w-[290px]"
+      className="m-auto mt-10 h-[170px] w-[170px] overflow-hidden rounded-full sm:h-[220px] sm:w-[220px] lg:h-[290px] lg:w-[290px]"
     >
       <Image
         src={PerfilImage}
@@ -14,7 +18,7 @@ const ProfileImage = () => {
         height={600}
         className="h-[170px] w-[170px] sm:h-[220px] sm:w-[220px] lg:h-[290px] lg:w-[290px]"
       />
-    </div>
+    </Slide>
   )
 }
 
