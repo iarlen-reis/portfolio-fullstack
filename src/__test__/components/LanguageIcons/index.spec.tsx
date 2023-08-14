@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import 'intersection-observer'
 import LanguageIcons from '@/components/LanguageIcons'
 
 const renderLanguageIcons = () => {

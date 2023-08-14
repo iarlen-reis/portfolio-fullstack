@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import 'intersection-observer'
 import Sobre from '@/app/sobre/page'
 
 const renderSobre = () => {

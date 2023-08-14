@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import 'intersection-observer'
 import Home from '@/app/page'
 
 const renderHome = () => {
@@ -29,18 +30,18 @@ describe('Home page', () => {
   })
 
   it('should display ProfileImage component', () => {
-    const { getByTestId } = renderHome()
+    const { getByRole } = renderHome()
 
-    const profileImage = getByTestId('profile-image')
+    const profileImage = getByRole('img')
 
     expect(profileImage).toBeInTheDocument()
   })
 
   it('should display InitialPresentation, ProfileImage, HomeIcons components', () => {
-    const { getByTestId } = renderHome()
+    const { getByTestId, getByRole } = renderHome()
 
     expect(getByTestId('initial-presentation')).toBeInTheDocument()
-    expect(getByTestId('profile-image')).toBeInTheDocument()
+    expect(getByRole('img')).toBeInTheDocument()
     expect(getByTestId('home-icons')).toBeInTheDocument()
   })
 })
