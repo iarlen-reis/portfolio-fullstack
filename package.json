@@ -10,6 +10,7 @@
     "test": "jest --watch"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
     "@prisma/client": "^5.1.1",
     "@types/node": "20.4.3",
     "@types/react": "18.2.15",
@@ -21,6 +22,7 @@
     "next-auth": "^4.22.5",
     "postcss": "8.4.27",
     "react": "18.2.0",
+    "react-awesome-reveal": "^4.2.5",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.45.3",
     "react-icons": "^4.10.1",
