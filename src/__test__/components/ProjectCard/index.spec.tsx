@@ -46,6 +46,14 @@ describe('ProjectCard component', () => {
     expect(title).toBeInTheDocument()
   })
 
+  it('should have a href with value </projetos/1> on title', () => {
+    const { getByText } = renderProjectCard()
+
+    const title = getByText('Paquetá Calçados')
+
+    expect(title).toHaveAttribute('href', 'projetos/1')
+  })
+
   it('should have project date with value <10 de jul, 2023 - 11 de jul, 2023>', () => {
     const { getByText } = renderProjectCard()
 
@@ -57,7 +65,7 @@ describe('ProjectCard component', () => {
   it('should have details link with value <projetos/1>', () => {
     const { getAllByRole } = renderProjectCard()
 
-    const detailsLink = getAllByRole('link')[0]
+    const detailsLink = getAllByRole('link')[1]
 
     expect(detailsLink).toHaveAttribute('href', 'projetos/1')
   })
@@ -65,7 +73,7 @@ describe('ProjectCard component', () => {
   it('should have deploy link with value <https://www.paquetacalcados.com.br>', () => {
     const { getAllByRole } = renderProjectCard()
 
-    const deployLink = getAllByRole('link')[1]
+    const deployLink = getAllByRole('link')[2]
 
     expect(deployLink).toHaveAttribute(
       'href',

@@ -31,7 +31,12 @@ const ProjectCard = ({
         />
       </div>
       <div className="flex flex-col gap-1.5 px-3">
-        <span className="font-marker text-xl sm:text-2xl">{title}</span>
+        <Link
+          href={detailsLink}
+          className="font-marker text-xl transition-colors hover:text-zinc-300 sm:text-2xl"
+        >
+          {title}
+        </Link>
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2">
             <CalendarDaysIcon className="h-4 w-4" />
