@@ -6,6 +6,27 @@ import ProjectContent from '@/components/ProjectContent'
 import ProjectTechnologys from '@/components/ProjectTechnologys'
 import ProjectDescription from '@/components/ProjectDescription'
 
+interface IParamsProps {
+  params: {
+    id: string
+  }
+}
+
+export async function generateMetadata({ params }: IParamsProps) {
+  const id = params.id
+
+  const axiosResponse = await axios.get<IProjectProps>(
+    `http://localhost:3000/api/projects/${id}`,
+  )
+
+  const project = await axiosResponse.data
+
+  return {
+    title: `Iarlen Reis - Projeto | ${project.title}`,
+    description: `Aqui você pode ver todos os detalhes do projeto ${project.title}, como tecnologias usadas e descrição completa.`,
+  }
+}
+
 const Project = async ({ params }: { params: { id: string } }) => {
   const response = await axios.get<IProjectProps>(
     `http://localhost:3000/api/projects/${params.id}`,

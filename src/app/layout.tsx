@@ -33,8 +33,9 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Portfólio - Iarlen Reis',
-  description: 'Porfolio do desenvolvedor front-end Iarlen Reis.',
+  title: 'Iarlen Reis - Desenvolvedor Front-End',
+  description:
+    'Explore meu portfólio de projetos e saiba mais sobre minha jornada como desenvolvedor.',
 }
 
 export default function RootLayout({

@@ -1,6 +1,13 @@
 import HomeIcons from '@/components/HomeIcons'
 import ProfileImage from '@/components/ProfileImage'
 import InitialPresentation from '@/components/InitialPresentation'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Iarlen Reis - Portfólio | Desenvolvedor Front-End',
+  description:
+    'Bem-vindo ao meu portfólio! Eu sou Iarlen Reis, um apaixonado desenvolvedor front-end. Explore meu trabalho e projetos.',
+}
 
 export default function Home() {
   return (

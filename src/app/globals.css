@@ -37,31 +37,12 @@ header::after {
   }
 }
 
-.profile {
-  animation: scaleImage 10s infinite alternate;
-}
-
-@keyframes scaleImage {
-  0% {
-    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
-  }
-
-  50% {
-    box-shadow: 0 0 10px 5px rgba(0, 255, 255, 0.4);
-  }
-
-  100% {
-    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
-  }
-}
-
 
 @media (min-width: 640px) {
   th {
     font-size: 1.3rem;
   }
 }
-
 
 .menu__mobile {
   animation: MenuAnimation 1s ease-in-out forwards;

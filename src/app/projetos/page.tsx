@@ -1,6 +1,13 @@
 import { IProjectProps } from '@/@types/ProjectTypes'
 import ProjectsGrid from '@/components/ProjectsGrid'
 import axios from 'axios'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Iarlen Reis - Portfólio | Projetos',
+  description:
+    'Explore uma coleção diversificada de projetos desenvolvidos e realizados por mim, Iarlen Reis.',
+}
 
 const Projetos = async () => {
   const response = await axios.get<IProjectProps[]>(
