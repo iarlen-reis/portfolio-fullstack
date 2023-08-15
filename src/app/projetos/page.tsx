@@ -1,5 +1,5 @@
 import { IProjectProps } from '@/@types/ProjectTypes'
-import ProjectCard from '@/components/ProjectCard'
+import ProjectsGrid from '@/components/ProjectsGrid'
 import axios from 'axios'
 
 const Projetos = async () => {
@@ -14,20 +14,7 @@ const Projetos = async () => {
       <div className="mt-5 flex flex-col gap-1">
         <h1 className="font-marker text-2xl lg:text-3xl">Projetos</h1>
       </div>
-      <div className="mt-4 grid w-full grid-cols-1 gap-6 md:grid-cols-2 md:justify-between xl:grid-cols-3">
-        {projects.map((project) => (
-          <ProjectCard
-            title={project.title}
-            image={project.image}
-            alt={project.alt}
-            projectDate={project.projectDate}
-            type={project.type}
-            deployLink={project.deployLink}
-            detailsLink={`/projetos/${project.id}`}
-            key={project.id}
-          />
-        ))}
-      </div>
+      <ProjectsGrid projects={projects} />
     </div>
   )
 }
