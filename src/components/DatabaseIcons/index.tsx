@@ -6,10 +6,10 @@ import { Rotate, Roll } from 'react-awesome-reveal'
 const DatabaseIcons = () => {
   return (
     <div className="flex flex-col gap-3" data-testid="database-icons">
-      <Rotate delay={1900}>
+      <Rotate delay={1900} triggerOnce>
         <h2 className="font-marker text-2xl lg:text-3xl">Databases</h2>
       </Rotate>
-      <Roll cascade delay={2000}>
+      <Roll cascade delay={2000} triggerOnce>
         <ul className="flex items-center gap-3">
           <LinkExternalWithIcon
             to="https://www.mongodb.com/pt-br/"

@@ -3,13 +3,14 @@ import { Fade, Slide } from 'react-awesome-reveal'
 const AboutMeInformation = () => {
   return (
     <div className="flex flex-col gap-3" data-testid="about-me-information">
-      <Slide direction="left">
+      <Slide direction="left" triggerOnce>
         <h1 className="mt-5 font-marker text-2xl lg:text-3xl">Informações</h1>
       </Slide>
       <Fade
         cascade
         duration={1000}
         delay={500}
+        triggerOnce
         className="flex flex-col gap-3 lg:gap-4"
       >
         <p className="font-roboto text-base leading-relaxed sm:text-lg lg:text-xl">

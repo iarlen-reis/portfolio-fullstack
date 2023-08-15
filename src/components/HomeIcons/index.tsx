@@ -5,7 +5,7 @@ import { Slide } from 'react-awesome-reveal'
 
 const HomeIcons = () => {
   return (
-    <Slide direction="up" duration={1000} cascade>
+    <Slide direction="up" duration={1000} cascade triggerOnce>
       <ul className="flex items-center gap-4" data-testid="home-icons">
         <LinkExternalWithIcon
           to="https://github.com/Iarlen-reis"

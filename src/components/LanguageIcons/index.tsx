@@ -13,11 +13,11 @@ import { Roll, Rotate } from 'react-awesome-reveal'
 const LanguageIcons = () => {
   return (
     <div className="flex flex-col gap-3" data-testid="language-icons">
-      <Rotate delay={1900}>
+      <Rotate delay={1900} triggerOnce>
         <h2 className="font-marker text-2xl lg:text-3xl">Linguagens</h2>
       </Rotate>
       <div className="flex flex-col gap-3">
-        <Roll cascade delay={2000}>
+        <Roll cascade delay={2000} triggerOnce>
           <ul className="flex items-center gap-3">
             <LinkExternalWithIcon
               to="https://www.typescriptlang.org/"

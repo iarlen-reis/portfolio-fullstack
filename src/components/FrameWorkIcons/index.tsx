@@ -8,10 +8,10 @@ import { Roll, Rotate } from 'react-awesome-reveal'
 const FrameWorkIcons = () => {
   return (
     <div className="flex flex-col gap-3" data-testid="framework-icons">
-      <Rotate delay={1900}>
+      <Rotate delay={1900} triggerOnce>
         <h2 className="font-marker text-2xl lg:text-3xl">Frameworks</h2>
       </Rotate>
-      <Roll cascade delay={2000}>
+      <Roll cascade delay={2000} triggerOnce>
         <ul className="flex items-center gap-3">
           <LinkExternalWithIcon
             to="https://react.dev/"
