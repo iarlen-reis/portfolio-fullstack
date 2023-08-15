@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react'
 import Project from '@/app/projetos/[id]/page'
+import 'intersection-observer'
 
 import axios from 'axios'
 jest.mock('axios')

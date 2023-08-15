@@ -1,7 +1,8 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import '@testing-library/jest-dom'
 import PageNavigation from '@/components/PageNavigation'
+import '@testing-library/jest-dom'
+import 'intersection-observer'
 
 const renderPageNavigation = () => {
   return render(
