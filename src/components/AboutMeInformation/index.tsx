@@ -14,16 +14,24 @@ const AboutMeInformation = () => {
         className="flex flex-col gap-3 lg:gap-4"
       >
         <p className="font-roboto text-base leading-relaxed sm:text-lg lg:text-xl">
-          Olá, meu nome é Iarlen Reis, tenho 21 anos e sou morador da cidade de
-          Salvador, na Bahia.
+          Olá! Meu nome é Iarlen Reis, tenho 21 anos e sou residente da Cidade
+          de Salvador, na Bahia. Inicie meus estudos na programação com a
+          linguagem Python, a princípio para desenvolvimento de bots e automação
+          de sites.
         </p>
         <p className="font-roboto text-base leading-relaxed sm:text-lg lg:text-xl">
-          Iniciei meus estudos de programação com a linguagem Python, a
-          princípio para desenvolvimento de bots e automação de sites.
+          Após alguns meses de estudos, decidir explorar a área de
+          desenvolvimento web, começando com HTML e CSS. Foi nesse momento que
+          me apaixonei pela área web. Logo em seguida, comecei meus na linguagem
+          Javascript, onde reaproveitei boa parte da base do python e logo me
+          consolidei aprendendo Typescript.
         </p>
         <p className="font-roboto text-base leading-relaxed sm:text-lg lg:text-xl">
-          Após alguns meses resolvi estudar desenvolvimento web, começando com
-          HTML / CSS e foi assim que descobrir minha paixão pela web.
+          Atualmente, sou desenvolvedor front-end, com foco em ReactJs/NextJs,
+          também já estudei alguns outras tecnologias como React native e
+          nodeJs. Pretendo continuar evoluindo minha skills front-end, mas
+          também me aprofundar um pouco mais back-end para me tornar um
+          desenvolvedor mais completo.
         </p>
       </Fade>
     </div>
