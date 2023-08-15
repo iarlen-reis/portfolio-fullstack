@@ -1,10 +1,12 @@
+'use client'
 import { IPageNavigationProps } from '@/@types/PageNavigationTypes'
 import Link from 'next/link'
 import React from 'react'
+import { Slide } from 'react-awesome-reveal'
 
 const PageNavigation = ({ from, to, link }: IPageNavigationProps) => {
   return (
-    <>
+    <Slide triggerOnce>
       <nav>
         <ul className="flex items-center gap-2">
           <li>
@@ -22,7 +24,7 @@ const PageNavigation = ({ from, to, link }: IPageNavigationProps) => {
           </li>
         </ul>
       </nav>
-    </>
+    </Slide>
   )
 }
 
