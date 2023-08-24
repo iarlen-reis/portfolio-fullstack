@@ -1,5 +1,6 @@
 import { IProjectTableProps } from '@/@types/ProjectTableTypes'
 import Link from 'next/link'
+import DeleteButton from '@/components/DeleteButton'
 
 const ProjectTable = ({ projects }: IProjectTableProps) => {
   return (
@@ -9,7 +10,8 @@ const ProjectTable = ({ projects }: IProjectTableProps) => {
           <tr>
             <th className="px-1">Projeto</th>
             <th>Tipo do projeto</th>
-            <th>Ações</th>
+            <th>Editar</th>
+            <th>Remover</th>
           </tr>
         </thead>
         <tbody className="max-h-9 overflow-auto">
@@ -32,6 +34,7 @@ const ProjectTable = ({ projects }: IProjectTableProps) => {
                   Editar
                 </Link>
               </td>
+              <DeleteButton projectId={project.id} />
             </tr>
           ))}
         </tbody>
