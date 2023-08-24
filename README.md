@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### <img src="/public/github.png" alt="github image">
 
-## Getting Started
+# Portfólio
 
-First, run the development server:
+<p>
+  Esse é o repositório do meu portfólio, ele foi desenvolvido utilizando nextJs 13.4.12, TailwindCSS, NextAuth, ReactQuery, Mongodb e Prisma. O Back-end da aplicação também foi feito utilizando a API routes do NextJs, sendo assim, uma aplicação fullstack e monolítica.
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<p>
+    A aplicação possui autenticação usando NextAuth, utilizando Github. Para armazenar os dados foi utilizado o banco de dados Mongodb Atlas, com o ORM Prisma para gerenciar as querys. Para realizar as requisições entre o front-end e o back-end foi utilizado Axios. 
+<p>
+  A aplicação tem 4 páginas públicas: <br><br>  <b>Página inicial:</b> Onde o usuário pode encontrar informação sobre o portfólio, como, por exemplo, nome, github, LinkedIn e currículo. <br> <b>Página sobre mim:</b> Onde o usuário pode encontrar informações sobre mim, como, por exemplo, nome, idade, cidade e uma breve história sobre mim. <br> <b>Página de Projetos:</b> Onde o usuário pode encontrar informação sobre os projetos que desenvolvi. <br> <b>Página de dinâmicas:</b> Onde o usuário pode ver detalhadamente cada um dos projetos.
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Funcionalidades
+- [x] Listagem de projetos.
+- [x] Exibição de detalhes do projeto.
+- [x] funcionalidade de excluir um projeto.
+- [x] Páginas privadas de criar e editar e gerenciar projetos. 
+- [x] SEO.
+- [x] Animações.
+- [x] Responsividade.
+- [x] Testes unitários.
+- [ ] Funcionalidade de ocultar um projeto.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Ferramentas
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Ferramentas utilizadas no desenvolvimento.
 
-## Learn More
+[@NextJs](https://nextjs.org/)
 
-To learn more about Next.js, take a look at the following resources:
+[@TypeScript](https://www.typescriptlang.org/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+[@TailwindCSS](https://tailwindcss.com/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+[@NextAuth](https://next-auth.js.org/)
 
-## Deploy on Vercel
+[@Prisma](https://www.prisma.io/)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[@ReactHookForm](https://react-hook-form.com/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+[@Axios](https://axios-http.com/ptbr/docs/intro)
+
+[@Jest](https://jestjs.io/pt-BR/)
+
+[@TestingLibrary](https://testing-library.com/)
+
+[@ReactAwesomeReveal](https://www.npmjs.com/package/react-awesome-reveal)
+
+[@LucideIcons](https://lucide.dev/)
+
+[@ReactIcons](https://react-icons.github.io/react-icons/)
