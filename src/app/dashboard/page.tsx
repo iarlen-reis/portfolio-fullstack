@@ -2,10 +2,16 @@ import { IProjectProps } from '@/@types/ProjectTypes'
 import ProjectTable from '@/components/ProjectTable'
 import axios from 'axios'
 import Link from 'next/link'
+import { headers } from 'next/headers'
 
 const Dashboard = async () => {
   const response = await axios.get<IProjectProps[]>(
     'http://localhost:3000/api/projects',
+    {
+      headers: {
+        Authorization: `Bearer ${headers().get('Authorization')}`,
+      },
+    },
   )
 
   const projects = response.data

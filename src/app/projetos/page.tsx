@@ -2,6 +2,7 @@ import { IProjectProps } from '@/@types/ProjectTypes'
 import ProjectsGrid from '@/components/ProjectsGrid'
 import axios from 'axios'
 import { Metadata } from 'next'
+import { headers } from 'next/headers'
 
 export const metadata: Metadata = {
   title: 'Iarlen Reis - Portfólio | Projetos',
@@ -12,6 +13,11 @@ export const metadata: Metadata = {
 const Projetos = async () => {
   const response = await axios.get<IProjectProps[]>(
     'http://localhost:3000/api/projects',
+    {
+      headers: {
+        Authorization: `Bearer ${headers().get('Authorization')}`,
+      },
+    },
   )
 
   const projects = response.data

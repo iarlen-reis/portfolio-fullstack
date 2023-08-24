@@ -33,11 +33,11 @@ export async function GET(request: NextRequest, { params }: IParamsProps) {
 }
 
 export async function DELETE(request: NextRequest, { params }: IParamsProps) {
-  // const currentUser = await useCurrentUser()
+  const currentUser = await useCurrentUser()
 
-  // if (!currentUser.session) {
-  //   return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
-  // }
+  if (!currentUser.session) {
+    return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
+  }
 
   const paramsShema = z.object({
     id: z.string(),

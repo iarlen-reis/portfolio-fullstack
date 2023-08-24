@@ -5,6 +5,7 @@ import ProjectHeader from '@/components/ProjectHeader'
 import ProjectContent from '@/components/ProjectContent'
 import ProjectTechnologys from '@/components/ProjectTechnologys'
 import ProjectDescription from '@/components/ProjectDescription'
+import { headers } from 'next/headers'
 
 interface IParamsProps {
   params: {
@@ -15,11 +16,16 @@ interface IParamsProps {
 export async function generateMetadata({ params }: IParamsProps) {
   const id = params.id
 
-  const axiosResponse = await axios.get<IProjectProps>(
+  const response = await axios.get<IProjectProps>(
     `http://localhost:3000/api/projects/${id}`,
+    {
+      headers: {
+        Authorization: `Bearer ${headers().get('Authorization')}`,
+      },
+    },
   )
 
-  const project = await axiosResponse.data
+  const project = response.data
 
   return {
     title: `Iarlen Reis - Projeto | ${project.title}`,
@@ -30,9 +36,14 @@ export async function generateMetadata({ params }: IParamsProps) {
 const Project = async ({ params }: { params: { id: string } }) => {
   const response = await axios.get<IProjectProps>(
     `http://localhost:3000/api/projects/${params.id}`,
+    {
+      headers: {
+        Authorization: `Bearer ${headers().get('Authorization')}`,
+      },
+    },
   )
 
-  const project = await response.data
+  const project = response.data
 
   return (
     <div className="m-auto max-w-[600px] pb-16">
