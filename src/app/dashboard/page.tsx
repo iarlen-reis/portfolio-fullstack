@@ -1,20 +1,22 @@
-import { IProjectProps } from '@/@types/ProjectTypes'
+'use client'
 import ProjectTable from '@/components/ProjectTable'
-import axios from 'axios'
 import Link from 'next/link'
-import { headers } from 'next/headers'
+import { useQuery } from 'react-query'
+import axios from 'axios'
+import { IProjectProps } from '@/@types/ProjectTypes'
 
-const Dashboard = async () => {
-  const response = await axios.get<IProjectProps[]>(
-    'http://localhost:3000/api/projects',
+const Dashboard = () => {
+  const { data: projects } = useQuery(
+    'projects',
+    async () => {
+      const response = await axios.get<IProjectProps[]>('/api/projects')
+
+      return response.data
+    },
     {
-      headers: {
-        Authorization: `Bearer ${headers().get('Authorization')}`,
-      },
+      staleTime: 1000 * 60 * 60 * 24,
     },
   )
-
-  const projects = response.data
 
   return (
     <div className="m-auto w-full max-w-[630px]">
@@ -34,7 +36,7 @@ const Dashboard = async () => {
               Todos os projetos
             </h2>
             <p className="font-poppins text-sm sm:text-base">
-              Total de projetos: {projects.length}
+              Total de projetos: {projects && projects.length}
             </p>
           </div>
           {projects && <ProjectTable projects={projects} />}

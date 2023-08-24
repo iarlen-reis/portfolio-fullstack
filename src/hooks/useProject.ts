@@ -17,10 +17,12 @@ interface IProjectProps {
 
 interface IUseProjectProps {
   getProject: (id: string) => void
+  getProjects: () => void
   createProject: (project: IProjectProps) => void
   editProject: (project: IProjectProps) => void
   deleteProject: (id: string) => void
   project: IProjectProps | undefined
+  projects: IProjectProps[] | undefined
   isEdditing: boolean
   isCreating: boolean
 }
@@ -41,6 +43,14 @@ export const useProject = (): IUseProjectProps => {
       },
     },
   )
+
+  const { data: projects, mutate: getProjects } = useMutation(async () => {
+    const response = await axios.get<IProjectProps[]>(
+      'http://localhost:3000/api/projects',
+    )
+
+    return response.data
+  })
 
   const { data: project, mutate: getProject } = useMutation(
     async (id: string) => {
@@ -71,10 +81,12 @@ export const useProject = (): IUseProjectProps => {
   })
   return {
     getProject,
+    getProjects,
     createProject,
     editProject,
     deleteProject,
     project,
+    projects,
     isCreating,
     isEdditing,
   }
