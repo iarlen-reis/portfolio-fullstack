@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/utils/prisma'
 import z from 'zod'
+import { useCurrentUser } from '@/hooks/useCurrentUser'
 
 interface IParamsProps {
   params: {
@@ -32,6 +33,12 @@ export async function GET(request: NextRequest, { params }: IParamsProps) {
 }
 
 export async function DELETE(request: NextRequest, { params }: IParamsProps) {
+  // const currentUser = await useCurrentUser()
+
+  // if (!currentUser.session) {
+  //   return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
+  // }
+
   const paramsShema = z.object({
     id: z.string(),
   })
@@ -48,6 +55,12 @@ export async function DELETE(request: NextRequest, { params }: IParamsProps) {
 }
 
 export async function PUT(request: NextRequest, { params }: IParamsProps) {
+  const currentUser = await useCurrentUser()
+
+  if (!currentUser.session) {
+    return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
+  }
+
   const paramsShema = z.object({
     id: z.string(),
   })

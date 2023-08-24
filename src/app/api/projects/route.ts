@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { prisma } from '@/utils/prisma'
+import { useCurrentUser } from '@/hooks/useCurrentUser'
+
 import z from 'zod'
 
 export async function GET() {
@@ -9,6 +11,12 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
+  const currentUser = await useCurrentUser()
+
+  if (!currentUser.session) {
+    return NextResponse.json({ message: 'Unauthorized' }, { status: 401 })
+  }
+
   const bodySchema = z.object({
     title: z.string(),
     description: z.string(),
