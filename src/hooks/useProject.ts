@@ -32,10 +32,7 @@ export const useProject = (): IUseProjectProps => {
 
   const { mutate: createProject, isLoading: isCreating } = useMutation(
     async (project: IProjectProps) => {
-      await axios.post<IProjectProps>(
-        'http://localhost:3000/api/projects',
-        project,
-      )
+      await axios.post<IProjectProps>('/api/projects', project)
     },
     {
       onSuccess() {
@@ -45,18 +42,14 @@ export const useProject = (): IUseProjectProps => {
   )
 
   const { data: projects, mutate: getProjects } = useMutation(async () => {
-    const response = await axios.get<IProjectProps[]>(
-      'http://localhost:3000/api/projects',
-    )
+    const response = await axios.get<IProjectProps[]>('/api/projects')
 
     return response.data
   })
 
   const { data: project, mutate: getProject } = useMutation(
     async (id: string) => {
-      const response = await axios.get<IProjectProps>(
-        `http://localhost:3000/api/projects/${id}`,
-      )
+      const response = await axios.get<IProjectProps>(`/api/projects/${id}`)
 
       return response.data
     },
@@ -64,10 +57,7 @@ export const useProject = (): IUseProjectProps => {
 
   const { mutate: editProject, isLoading: isEdditing } = useMutation(
     async (project: IProjectProps) => {
-      await axios.put<IProjectProps>(
-        `http://localhost:3000/api/projects/${project.id}`,
-        project,
-      )
+      await axios.put<IProjectProps>(`/api/projects/${project.id}`, project)
     },
     {
       onSuccess() {
@@ -77,7 +67,7 @@ export const useProject = (): IUseProjectProps => {
   )
 
   const { mutate: deleteProject } = useMutation(async (id: string) => {
-    await axios.delete(`http://localhost:3000/api/projects/${id}`)
+    await axios.delete(`/api/projects/${id}`)
   })
   return {
     getProject,
