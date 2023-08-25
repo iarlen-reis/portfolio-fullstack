@@ -20,8 +20,8 @@ const MenuMobile = () => {
   return (
     <>
       {isMobile && (
-        <div className="menu__mobile absolute right-0 top-0 z-10 flex h-screen w-[260px] flex-col bg-black px-4 transition-all md:hidden">
-          <div className="mt-3 flex items-center justify-between border-b border-white/40 pb-2">
+        <div className="menu__mobile absolute right-0 top-0 z-10 flex h-screen w-full flex-col bg-black px-4 transition-all md:hidden">
+          <div className="mt-3 flex items-center justify-between border-b border-white/20 pb-2">
             <Link href="/">
               <Image
                 src={Logo}
@@ -32,7 +32,7 @@ const MenuMobile = () => {
             </Link>
             <MenuButton />
           </div>
-          <nav className="mt-6 flex items-center justify-start border-b border-white/40 pb-5">
+          <nav className="mt-6 flex items-center justify-start border-b border-white/20 pb-5">
             <ul className="flex flex-col items-start justify-center gap-4">
               <li onClick={handleIsMobile}>
                 <LinkNavigation name="Página inicial" to="/" icon={HomeIcon} />
@@ -59,14 +59,14 @@ const MenuMobile = () => {
               icon={GithubIcon}
               arialLabel="Link para o perfil do github do desenvolvedor Iarlen Reis"
               fontSize={30}
-              className="flex h-8 w-8 items-center justify-center rounded border border-white/40 bg-white text-black transition-all group-hover:bg-zinc-950 group-hover:text-white"
+              className="flex h-10 w-10 items-center justify-center rounded border border-white/40 bg-zinc-800 text-white focus:opacity-90"
             />
             <LinkExternalWithIcon
               to="https://linkedin.com/in/Iarlen-Reis"
               icon={LinkedinIcon}
               arialLabel="Link para o perfil do Linkedin do desenvolvedor Iarlen Reis"
               fontSize={30}
-              className="flex h-8 w-8 items-center justify-center rounded border border-white/40 bg-white text-black transition-all group-hover:bg-blue-800 group-hover:text-white"
+              className="flex h-10 w-10 items-center justify-center rounded border border-white/40 bg-blue-800 text-white focus:opacity-90"
             />
             <LinkExternalWithIcon
               to="/public/CurriculoIarlenSantosReis.pdf"
@@ -74,7 +74,7 @@ const MenuMobile = () => {
               download="Currículo Iarlen Santos Reis"
               arialLabel="Link para baixar o currículo desenvolvedor Iarlen Reis"
               fontSize={30}
-              className="flex h-8 w-8 items-center justify-center rounded border border-white/40 bg-white text-black transition-all group-hover:bg-green-500 group-hover:text-white"
+              className="flex h-10 w-10 items-center justify-center rounded border border-white/40 bg-green-500 text-white focus:opacity-90"
             />
           </ul>
         </div>
