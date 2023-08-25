@@ -5,7 +5,11 @@ import { useCurrentUser } from '@/hooks/useCurrentUser'
 import z from 'zod'
 
 export async function GET() {
-  const projects = await prisma.project.findMany()
+  const projects = await prisma.project.findMany({
+    orderBy: {
+      createdAt: 'desc',
+    },
+  })
 
   return NextResponse.json(projects)
 }
